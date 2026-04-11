@@ -2,7 +2,7 @@
 
 # 🎱 Soc Ops
 
-> **Social Bingo for in-person mixers.** Find people who match the questions, mark your card, get 5 in a row — first to win yells *BINGO!*
+> **Social Bingo for in-person mixers.** Find people who match the questions, mark your card, get 5 in a row—first to win yells *BINGO!*
 
 Built with **FastAPI + HTMX** — no page reloads, pure fun.
 
