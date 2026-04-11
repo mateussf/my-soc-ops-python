@@ -1,8 +1,19 @@
 🌐 [Português (BR)](README.pt_BR.md) | [Español](README.es.md)
 
-# Soc Ops
+# 🎱 Soc Ops
 
-Social Bingo game for in-person mixers. Find people who match the questions and get 5 in a row!
+> **Social Bingo for in-person mixers.** Find people who match the questions, mark your card, get 5 in a row—first to win yells *BINGO!*
+
+Built with **FastAPI + HTMX** — no page reloads, pure fun.
+
+---
+
+## 🚀 Quick start
+
+```bash
+uv run uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+# → open http://localhost:8000
+```
 
 ---
 
@@ -16,10 +27,30 @@ Social Bingo game for in-person mixers. Find people who match the questions and 
 | [**03**](https://copilot-dev-days.github.io/agent-lab-python/docs/step.html?step=03-quiz-master) | Custom Quiz Master |
 | [**04**](https://copilot-dev-days.github.io/agent-lab-python/docs/step.html?step=04-multi-agent) | Multi-Agent Development |
 
-> 📝 Lab guides are also available in the [`workshop/`](workshop/) folder for offline reading.
+> 📝 Guides also available in [`workshop/`](workshop/) for offline reading.
 
 ---
 
-## 🚀 Getting Started
+## 🗂 Project layout
 
-Head to **[Part 00: Overview](https://copilot-dev-days.github.io/agent-lab-python/step.html?step=00-overview)** for prerequisites and setup instructions.
+```
+app/
+├── main.py          # FastAPI routes
+├── game_service.py  # Session management
+├── game_logic.py    # Board & win detection
+├── models.py        # Pydantic models
+├── data.py          # Question bank
+└── templates/       # Jinja2 + HTMX views
+tests/               # 25 pytest tests
+```
+
+---
+
+## 🛠 Dev commands
+
+| Command | What it does |
+|---------|-------------|
+| `uv run uvicorn app.main:app --reload` | Start dev server |
+| `uv run pytest` | Run all 25 tests |
+| `uv run ruff check .` | Lint code |
+
