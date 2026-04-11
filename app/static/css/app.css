@@ -10,6 +10,207 @@ body {
     -webkit-tap-highlight-color: transparent;
 }
 
+/* =====================================================
+   LANDING PAGE — Risograph / Zine aesthetic
+   Palette: cream #fef6e4 · navy #0d1b4b · orange #f7431a
+   ===================================================== */
+
+:root {
+    --land-bg:     #fef6e4;
+    --land-navy:   #0d1b4b;
+    --land-orange: #f7431a;
+    --land-gold:   #f7c41a;
+    --land-cream:  #fef6e4;
+    --land-font:   'Unbounded', system-ui, sans-serif;
+    --land-mono:   'DM Mono', monospace;
+}
+
+/* Full-height textured background */
+.landing-bg {
+    background-color: var(--land-bg);
+    background-image:
+        radial-gradient(circle, var(--land-navy) 1px, transparent 1px);
+    background-size: 22px 22px;
+    background-position: 0 0;
+    min-height: 100%;
+}
+
+/* Main card — no drop-shadow, use thick borders instead */
+.landing-card {
+    position: relative;
+    width: 100%;
+    max-width: 360px;
+    padding: 2.5rem 2rem 2rem;
+    background: var(--land-cream);
+    border: 3px solid var(--land-navy);
+    box-shadow: 8px 8px 0 var(--land-navy);
+    animation: land-rise 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes land-rise {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* "LIVE EVENT" badge */
+.landing-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--land-mono);
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: var(--land-orange);
+    border: 1.5px solid var(--land-orange);
+    padding: 0.25rem 0.65rem;
+    margin-bottom: 1.5rem;
+    animation: land-rise 0.4s 0.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.landing-badge-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--land-orange);
+    animation: badge-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes badge-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.4; transform: scale(0.7); }
+}
+
+/* Title */
+.landing-title-wrap {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    animation: land-rise 0.5s 0.15s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.landing-title {
+    font-family: var(--land-font);
+    font-size: 4.5rem;
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    color: var(--land-navy);
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+/* Orange highlight stripe behind title */
+.landing-title-stripe {
+    position: absolute;
+    left: -4px;
+    right: -4px;
+    bottom: 8px;
+    height: 22px;
+    background: var(--land-gold);
+    z-index: 0;
+    transform: rotate(-0.8deg);
+}
+
+/* Subtitle */
+.landing-subtitle {
+    font-family: var(--land-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    color: var(--land-orange);
+    margin: 0.75rem 0 2rem;
+    animation: land-rise 0.5s 0.22s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Rules box */
+.landing-rules {
+    background: var(--land-navy);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.75rem;
+    text-align: left;
+    animation: land-rise 0.5s 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.landing-rules-header {
+    font-family: var(--land-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    color: var(--land-gold);
+    margin: 0 0 0.85rem;
+}
+
+.landing-rules-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.landing-rules-list li {
+    display: flex;
+    align-items: baseline;
+    gap: 0.65rem;
+    font-family: var(--land-font);
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: var(--land-cream);
+    line-height: 1.4;
+}
+
+.landing-rule-num {
+    font-family: var(--land-mono);
+    font-size: 0.6rem;
+    color: var(--land-orange);
+    flex-shrink: 0;
+    padding-top: 1px;
+}
+
+/* Start button */
+.landing-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background: var(--land-orange);
+    color: var(--land-cream);
+    font-family: var(--land-font);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 1.1rem 2rem;
+    border: 3px solid var(--land-navy);
+    box-shadow: 4px 4px 0 var(--land-navy);
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.1s;
+    animation: land-rise 0.5s 0.38s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.landing-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--land-navy);
+}
+
+.landing-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--land-navy);
+}
+
+.landing-btn-arrow {
+    font-size: 1.1rem;
+    transition: transform 0.2s;
+}
+
+.landing-btn:hover .landing-btn-arrow {
+    transform: translateX(4px);
+}
+
 /* Tailwind-like utility classes */
 .h-full { height: 100%; }
 .min-h-full { min-height: 100%; }
